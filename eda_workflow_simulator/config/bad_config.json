@@ -1,0 +1,49 @@
+{
+  "project_name": "eda_workflow_demo",
+  "input": {
+    "allowed_extensions": [
+      ".v",
+      ".sv"
+    ],
+    "max_file_size_kb": 256
+  },
+  "output": {
+    "report_dir": "reports",
+    "log_dir": "logs"
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "stages": [
+    "input_validation",
+    "design_prep",
+    "elaboration",
+    "lint",
+    "simulation",
+    "timing"
+  ],
+  "retry": {
+    "max_attempts": "two"
+  },
+  "simulated_delay_ms": 100,
+  "lint": {
+    "max_warnings": 5,
+    "max_line_length": 100,
+    "max_warnigs": 3
+  },
+  "simulation": {
+    "seed": 42,
+    "tests_per_module": 5,
+    "min_coverage_percent": 70.0
+  },
+  "timing": {
+    "target_clock_mhz": 500.0,
+    "min_slack_ns": 0.0
+  },
+  "failure_simulation": {
+    "enabled": false,
+    "stage": null,
+    "mode": "error",
+    "fail_attempts": 1
+  }
+}

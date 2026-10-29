@@ -1,0 +1,32 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run counter.v",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "eda_sim",
+      "args": ["run", "sample_inputs/counter.v"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run broken_unbalanced.v",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "eda_sim",
+      "args": ["run", "sample_inputs/broken_unbalanced.v"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Run tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "unittest",
+      "args": ["discover", "-s", "tests", "-t", ".", "-v"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

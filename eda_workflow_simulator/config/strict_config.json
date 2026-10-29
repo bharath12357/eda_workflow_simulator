@@ -1,0 +1,48 @@
+{
+  "project_name": "strict_demo",
+  "input": {
+    "allowed_extensions": [
+      ".v",
+      ".sv"
+    ],
+    "max_file_size_kb": 256
+  },
+  "output": {
+    "report_dir": "reports",
+    "log_dir": "logs"
+  },
+  "logging": {
+    "level": "INFO"
+  },
+  "stages": [
+    "input_validation",
+    "design_prep",
+    "elaboration",
+    "lint",
+    "simulation",
+    "timing"
+  ],
+  "retry": {
+    "max_attempts": 2
+  },
+  "simulated_delay_ms": 100,
+  "lint": {
+    "max_warnings": 2,
+    "max_line_length": 100
+  },
+  "simulation": {
+    "seed": 42,
+    "tests_per_module": 5,
+    "min_coverage_percent": 95.0
+  },
+  "timing": {
+    "target_clock_mhz": 500.0,
+    "min_slack_ns": 0.0
+  },
+  "failure_simulation": {
+    "enabled": false,
+    "stage": null,
+    "mode": "error",
+    "fail_attempts": 1
+  }
+}

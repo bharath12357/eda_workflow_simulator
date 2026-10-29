@@ -1,0 +1,169 @@
+{
+  "run_id": "20261018T071853165Z",
+  "tool_version": "1.0.0",
+  "design_file": "sample_inputs/alu.v",
+  "status": "PASSED",
+  "started_at": "2026-10-18T07:18:53.165+00:00",
+  "finished_at": "2026-10-18T07:18:53.167+00:00",
+  "duration_ms": 1.448,
+  "config": {
+    "project_name": "eda_workflow_demo",
+    "input": {
+      "allowed_extensions": [
+        ".v",
+        ".sv"
+      ],
+      "max_file_size_kb": 256
+    },
+    "output": {
+      "report_dir": "reports",
+      "log_dir": "logs"
+    },
+    "logging": {
+      "level": "INFO"
+    },
+    "stages": [
+      "input_validation",
+      "design_prep",
+      "elaboration",
+      "lint",
+      "simulation",
+      "timing"
+    ],
+    "retry": {
+      "max_attempts": 2
+    },
+    "simulated_delay_ms": 0,
+    "lint": {
+      "max_warnings": 5,
+      "max_line_length": 100
+    },
+    "simulation": {
+      "seed": 42,
+      "tests_per_module": 5,
+      "min_coverage_percent": 70.0
+    },
+    "timing": {
+      "target_clock_mhz": 500.0,
+      "min_slack_ns": 0.0
+    },
+    "failure_simulation": {
+      "enabled": false,
+      "stage": null,
+      "mode": "error",
+      "fail_attempts": 1
+    }
+  },
+  "stages": [
+    {
+      "name": "input_validation",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.165+00:00",
+      "finished_at": "2026-10-18T07:18:53.166+00:00",
+      "duration_ms": 0.303,
+      "attempts": 1,
+      "messages": [
+        "alu.v accepted"
+      ],
+      "metrics": {
+        "bytes": 850,
+        "lines": 30
+      },
+      "error": null
+    },
+    {
+      "name": "design_prep",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.166+00:00",
+      "finished_at": "2026-10-18T07:18:53.166+00:00",
+      "duration_ms": 0.174,
+      "attempts": 1,
+      "messages": [
+        "Found modules: counter, alu"
+      ],
+      "metrics": {
+        "modules": 2,
+        "assign_statements": 1,
+        "always_blocks": 1
+      },
+      "error": null
+    },
+    {
+      "name": "elaboration",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.166+00:00",
+      "finished_at": "2026-10-18T07:18:53.166+00:00",
+      "duration_ms": 0.091,
+      "attempts": 1,
+      "messages": [
+        "1 instance(s) resolved"
+      ],
+      "metrics": {
+        "instances": 1
+      },
+      "error": null
+    },
+    {
+      "name": "lint",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.166+00:00",
+      "finished_at": "2026-10-18T07:18:53.166+00:00",
+      "duration_ms": 0.215,
+      "attempts": 1,
+      "messages": [
+        "0 lint warning(s)"
+      ],
+      "metrics": {
+        "warnings": 0,
+        "max_warnings": 5,
+        "first_warnings": []
+      },
+      "error": null
+    },
+    {
+      "name": "simulation",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.166+00:00",
+      "finished_at": "2026-10-18T07:18:53.167+00:00",
+      "duration_ms": 0.311,
+      "attempts": 1,
+      "messages": [
+        "10 test(s) passed, coverage 80.9%"
+      ],
+      "metrics": {
+        "tests_total": 10,
+        "tests_failed": 0,
+        "tests_passed": 10,
+        "coverage_percent": 80.9,
+        "min_coverage_percent": 70.0,
+        "seed": 42
+      },
+      "error": null
+    },
+    {
+      "name": "timing",
+      "status": "PASSED",
+      "started_at": "2026-10-18T07:18:53.167+00:00",
+      "finished_at": "2026-10-18T07:18:53.167+00:00",
+      "duration_ms": 0.116,
+      "attempts": 1,
+      "messages": [
+        "Timing met, slack 1.129 ns"
+      ],
+      "metrics": {
+        "critical_path_ns": 0.871,
+        "target_period_ns": 2.0,
+        "slack_ns": 1.129,
+        "min_slack_ns": 0.0,
+        "max_frequency_mhz": 1148.1
+      },
+      "error": null
+    }
+  ],
+  "summary": {
+    "stages_total": 6,
+    "stages_passed": 6,
+    "stages_failed": 0,
+    "stages_skipped": 0
+  }
+}
